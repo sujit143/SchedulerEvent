@@ -1,0 +1,46 @@
+<div class="control-section">
+    <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+        (actionBegin)="onActionBegin($event)" (eventRendered)="onEventRendered($event)" [showQuickInfo]="showQuickInfo">
+        <e-views>
+            <e-view option="Day"></e-view>
+            <e-view option="Week"></e-view>
+            <e-view option="WorkWeek"></e-view>
+            <e-view option="Month"></e-view>
+        </e-views>
+
+        <ng-template #editorTemplate let-data  >
+<div>
+                        <mat-tab-group animationDuration="0ms" >
+                          <mat-tab label="Demographics">
+                            <app-demographics></app-demographics>
+                          </mat-tab>
+                          <mat-tab label="Insurance">
+                            <!-- <h1>Insurance</h1> -->
+                            <app-insurance></app-insurance>
+                          </mat-tab>
+                          <mat-tab label="Appointments">
+                  <app-appointments></app-appointments>
+
+                    </mat-tab>
+                          <mat-tab label="Referral Source">
+                            <!-- <h1>Referral Source </h1> -->
+                            <app-referralsource></app-referralsource>
+                          </mat-tab>
+                          <mat-tab label="Documents">
+                           <app-menusidebar></app-menusidebar>
+                          </mat-tab>
+                          <mat-tab label="Care Team">
+
+                            <app-careteam></app-careteam>
+                          </mat-tab>
+                          <mat-tab label="Appointment Memo">
+                            <!-- <h1>Appointment Memo </h1> -->
+                            <app-appointmentmemo></app-appointmentmemo>
+
+
+                        </mat-tab>
+                        </mat-tab-group>
+                       </div>
+                      </ng-template>
+        </ejs-schedule>
+        </div>
